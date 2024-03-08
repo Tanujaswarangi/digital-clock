@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #t1 {
+            
+            width: 600px;
+            height: 150px;
+            background-color: black;
+            color: rgb(152, 181, 199);
+            display: flex;
+            flex-direction: row;
+            font-size: 30px;
+            align-items: center;
+            justify-content: center;
+            margin-left: 560px;
+            margin-top: 300px;
+            box-shadow: 3px 3px 5px 2px lightseagreen
+
+        }
+        body{
+            background-color: black;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="t1">
+        <div id="hrs">00:</div>
+        <div id="mins">00:</div>
+        <div id="secs">00:</div>
+        <div id="msecs">00</div>
+    </div>
+</body>
+<script>
+
+
+
+
+    setInterval(() => {
+        var hours = new Date().getHours();
+        var minutes = new Date().getMinutes();
+        var seconds = new Date().getSeconds();
+        var milliseconds = new Date().getMilliseconds();
+
+        document.getElementById("hrs").innerHTML = hours + ":";
+
+        if (minutes < 10) {
+            document.getElementById("mins").innerHTML = "0" + minutes + ":";
+        }
+        else {
+            document.getElementById("mins").innerHTML = minutes + ":";
+        }
+        if (seconds < 10) {
+            document.getElementById("secs").innerHTML = "0" + seconds + ":";
+        }
+        else {
+            document.getElementById("secs").innerHTML = seconds + ":";
+        }
+        document.getElementById("msecs").innerHTML = milliseconds;
+
+    }, 1000)
+
+</script>
+
+</html>
